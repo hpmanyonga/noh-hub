@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Provider Portal — Network One Health</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+  }
+
+  /* Nav bar */
+  .nav {
+    background: #fff;
+    border-bottom: 1px solid #e8e8e8;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .nav-brand {
+    font-size: 14px;
+    font-weight: 700;
+    color: #40887d;
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 24px; }
+  .nav-links a {
+    font-size: 13px;
+    color: #666;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .nav-links a:hover { color: #40887d; }
+  .nav-links a.active { color: #40887d; border-bottom: 2px solid #40887d; padding-bottom: 2px; }
+
+  /* Header */
+  .header {
+    background: linear-gradient(135deg, #40887d 0%, #2e6b68 100%);
+    color: #fff;
+    padding: 48px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -60%; right: -20%;
+    width: 500px; height: 500px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 50%;
+  }
+  .header .lock { font-size: 2.5rem; margin-bottom: 12px; display: block; }
+  .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+  .header p { font-size: 15px; opacity: 0.85; max-width: 520px; margin: 0 auto; }
+
+  /* Container */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+
+  /* Intro */
+  .intro {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 40px;
+    font-size: 15px;
+    color: #555;
+  }
+
+  /* Card grid */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+    margin-bottom: 48px;
+  }
+
+  /* Card */
+  .card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 28px;
+    border: 1px solid #e8e8e8;
+    transition: box-shadow 0.2s, transform 0.2s;
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+  }
+  .card:hover {
+    box-shadow: 0 8px 24px rgba(64, 136, 125, 0.15);
+    transform: translateY(-2px);
+    border-color: #40887d;
+  }
+  .card .icon {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+  .card .icon.vault { background: #e6f2f0; }
+  .card .icon.clinical { background: #f0e8f7; }
+  .card .icon.pipeline { background: #fdf0f2; }
+
+  .card h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #2e6b68;
+    margin-bottom: 8px;
+  }
+  .card p {
+    font-size: 14px;
+    color: #666;
+    flex-grow: 1;
+    margin-bottom: 14px;
+  }
+  .card .badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-right: 6px;
+  }
+  .badge.docs { background: #f0e8f7; color: #7b5ea7; }
+  .badge.dash { background: #e6f2f0; color: #40887d; }
+  .badge.secure { background: #fdf6e8; color: #c9a44e; }
+
+  /* Features */
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+  .feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    color: #555;
+    background: #fff;
+    padding: 14px 16px;
+    border-radius: 8px;
+    border: 1px solid #e8e8e8;
+  }
+  .feature-check {
+    color: #40887d;
+    font-size: 1.1rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* Access CTA */
+  .access-section {
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 12px;
+    padding: 40px 32px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .access-section h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #2e6b68;
+    margin-bottom: 10px;
+  }
+  .access-section p {
+    font-size: 14px;
+    color: #666;
+    max-width: 540px;
+    margin: 0 auto 24px;
+  }
+  .btn {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    transition: background 0.2s, transform 0.1s;
+  }
+  .btn-primary {
+    background: #40887d;
+    color: #fff;
+  }
+  .btn-primary:hover {
+    background: #2e6b68;
+    transform: translateY(-1px);
+  }
+  .btn-outline {
+    background: transparent;
+    color: #40887d;
+    border: 2px solid #40887d;
+    margin-left: 12px;
+  }
+  .btn-outline:hover {
+    background: #40887d;
+    color: #fff;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 13px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  .footer a { color: #40887d; text-decoration: none; }
+
+  @media (max-width: 600px) {
+    .header h1 { font-size: 22px; }
+    .header { padding: 32px 20px; }
+    .grid { grid-template-columns: 1fr; }
+    .features { grid-template-columns: 1fr; }
+    .btn-outline { margin-left: 0; margin-top: 10px; display: block; }
+    .nav-links { gap: 14px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <a href="index.html" class="nav-brand">Network One Health</a>
+  <div class="nav-links">
+    <a href="index.html">App Hub</a>
+    <a href="provider.html" class="active">Provider Portal</a>
+  </div>
+</div>
+
+<div class="header">
+  <span class="lock">&#128272;</span>
+  <h1>Provider Portal</h1>
+  <p>Secure access to clinical tools, governance documents, and quality dashboards for healthcare professionals</p>
+</div>
+
+<div class="container">
+
+  <p class="intro">
+    This portal is exclusively for authorised healthcare professionals affiliated with
+    Network One Health. Access clinical protocols, standard operating procedures, quality
+    dashboards, and patient management tools.
+  </p>
+
+  <!-- App Cards -->
+  <div class="grid">
+
+    <a href="https://noh-clinical-vault.streamlit.app/" target="_blank" class="card">
+      <div class="icon vault">&#128274;</div>
+      <h3>Clinical Vault</h3>
+      <p>Clinical Operations Manual, 11 Standard Operating Procedures, and 10 Quick Reference Cards. View inline or download as PDF.</p>
+      <div>
+        <span class="badge docs">22 Documents</span>
+        <span class="badge secure">Auth Required</span>
+      </div>
+    </a>
+
+    <a href="https://noh-maternity-dashboard.streamlit.app/" target="_blank" class="card">
+      <div class="icon clinical">&#127973;</div>
+      <h3>Clinical Dashboard</h3>
+      <p>Morning huddle, birth register, INSIST outcomes, maternal safety, quality scorecard, patient flow, and governance reporting.</p>
+      <div>
+        <span class="badge dash">21 KPIs</span>
+        <span class="badge secure">Auth Required</span>
+      </div>
+    </a>
+
+    <a href="https://noh-pipeline-dashboard.streamlit.app/" target="_blank" class="card">
+      <div class="icon pipeline">&#128200;</div>
+      <h3>Patient Pipeline</h3>
+      <p>Track patient referrals from enquiry to booking. Lead funnel, conversion metrics, and source analysis across all sites.</p>
+      <div>
+        <span class="badge dash">Pipeline</span>
+        <span class="badge secure">Auth Required</span>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- What's available -->
+  <div class="features">
+    <div class="feature">
+      <span class="feature-check">&#10003;</span>
+      <span>Clinical Operations Manual V1.0 (12 Chapters)</span>
+    </div>
+    <div class="feature">
+      <span class="feature-check">&#10003;</span>
+      <span>11 Standard Operating Procedures</span>
+    </div>
+    <div class="feature">
+      <span class="feature-check">&#10003;</span>
+      <span>10 Colour-Coded Quick Reference Cards</span>
+    </div>
+    <div class="feature">
+      <span class="feature-check">&#10003;</span>
+      <span>21 KPI Clinical Quality Dashboard</span>
+    </div>
+    <div class="feature">
+      <span class="feature-check">&#10003;</span>
+      <span>INSIST Perinatal Death Classification</span>
+    </div>
+    <div class="feature">
+      <span class="feature-check">&#10003;</span>
+      <span>Inline PDF Viewing &amp; Download</span>
+    </div>
+    <div class="feature">
+      <span class="feature-check">&#10003;</span>
+      <span>Download Audit Trail</span>
+    </div>
+    <div class="feature">
+      <span class="feature-check">&#10003;</span>
+      <span>Secure Supabase Authentication</span>
+    </div>
+  </div>
+
+  <!-- Request Access -->
+  <div class="access-section">
+    <h2>Need Access?</h2>
+    <p>
+      If you are a healthcare professional affiliated with Network One Health and need
+      access to the Provider Portal, contact our team. We will set up your credentials
+      within 24 hours.
+    </p>
+    <a class="btn btn-primary" href="mailto:hp@hpmanyonga.com?subject=Provider%20Portal%20Access%20Request&body=Name:%0APractice:%0ARole:%0AEmail:">
+      Request Access
+    </a>
+    <a class="btn btn-outline" href="tel:0114582497">
+      Call: 011 458 2497
+    </a>
+  </div>
+
+</div>
+
+<div class="footer">
+  <p>Network One Health &mdash; Dr H P Manyonga &amp; Associates</p>
+  <p>Pretoria | Johannesburg | Rustenburg</p>
+  <p style="margin-top: 8px;">Tel: 011 458 2497 | WhatsApp: 066 499 2713 | <a href="https://hpmanyonga.com">hpmanyonga.com</a></p>
+</div>
+
+</body>
+</html>

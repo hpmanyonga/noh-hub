@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Hospitals — Network One Maternity</title>
+<meta property="og:title" content="Our Birth Facilities — Network One Maternity">
+<meta property="og:description" content="Delivering your baby at Busamed Modderfontein (Johannesburg) and Louis Pasteur Private Hospital (Pretoria). Private facilities with 24-hour obstetric coverage.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #f8f9fa; color: #333; -webkit-font-smoothing: antialiased; }
+
+  /* Nav */
+  .nav { background:#fff; border-bottom:1px solid #e8ede9; padding:12px 24px; display:flex; align-items:center; justify-content:space-between; max-width:900px; margin:0 auto; }
+  .nav-brand { font-size:14px; font-weight:700; color:#40887d; text-decoration:none; }
+  .nav-links { display:flex; gap:20px; }
+  .nav-links a { font-size:13px; color:#666; text-decoration:none; font-weight:600; }
+  .nav-links a:hover { color:#40887d; }
+  .nav-links a.active { color:#40887d; border-bottom:2px solid #40887d; padding-bottom:2px; }
+
+  /* Header */
+  .header {
+    background: linear-gradient(160deg, #2d6159 0%, #40887d 50%, #5ca89e 100%);
+    padding: 48px 24px;
+    text-align: center;
+    color: #fff;
+  }
+  .header-badge { display:inline-block; background:rgba(255,255,255,0.15); font-size:11px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; padding:5px 14px; border-radius:20px; margin-bottom:16px; }
+  .header h1 { font-size:clamp(26px,5vw,38px); font-weight:800; margin-bottom:10px; }
+  .header p { font-size:16px; opacity:0.85; max-width:520px; margin:0 auto; line-height:1.5; }
+
+  .container { max-width:900px; margin:0 auto; padding:40px 24px 60px; }
+
+  /* Hospital card */
+  .hospital-card {
+    background: #fff;
+    border: 1px solid #e8ede9;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 32px;
+    transition: box-shadow 0.2s;
+  }
+  .hospital-card:hover { box-shadow: 0 8px 30px rgba(64,136,125,0.1); }
+
+  .hospital-accent {
+    height: 6px;
+    background: linear-gradient(90deg, #40887d, #5ca89e);
+  }
+
+  .hospital-body { padding: 32px; }
+
+  .hospital-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .hospital-name h2 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+  }
+  .hospital-city {
+    font-size: 14px;
+    color: #40887d;
+    font-weight: 600;
+  }
+
+  .hospital-badge {
+    background: #e6f2f0;
+    color: #2d6159;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  .hospital-address {
+    background: #f8faf9;
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+  }
+  .hospital-address .icon { font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+
+  .hospital-desc {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  /* Features grid */
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+  .feature {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #444;
+    padding: 10px 12px;
+    background: #f8faf9;
+    border-radius: 8px;
+  }
+  .feature-icon { color: #40887d; font-size: 15px; flex-shrink: 0; }
+
+  /* Contact row */
+  .hospital-contacts {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .hospital-contact {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: #40887d;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 8px 16px;
+    border: 1px solid #d0e0dd;
+    border-radius: 8px;
+    transition: all 0.2s;
+  }
+  .hospital-contact:hover { background: #e6f2f0; }
+
+  /* Visiting hours */
+  .visiting {
+    margin-top: 20px;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 20px;
+  }
+  .visiting h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #40887d;
+    margin-bottom: 10px;
+  }
+  .visiting-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 10px;
+  }
+  .visiting-item {
+    font-size: 13px;
+    color: #555;
+    background: #f8faf9;
+    padding: 10px 14px;
+    border-radius: 8px;
+  }
+  .visiting-item strong { color: #333; display: block; margin-bottom: 2px; }
+
+  /* NOH at this hospital */
+  .noh-section {
+    background: linear-gradient(135deg, #f0f9f7, #e8f4f1);
+    border: 2px solid #40887d;
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 24px;
+  }
+  .noh-section h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #40887d;
+    margin-bottom: 8px;
+  }
+  .noh-section p { font-size: 14px; color: #555; line-height: 1.6; }
+  .noh-section ul { margin: 8px 0 0 18px; font-size: 14px; color: #555; line-height: 1.7; }
+
+  /* Comparison table */
+  .compare-section { margin-top: 8px; }
+  .compare-title {
+    font-size: 11px; font-weight: 700; color: #40887d;
+    text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px;
+  }
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e8ede9;
+    font-size: 14px;
+  }
+  .compare-table th {
+    background: #40887d; color: #fff; padding: 14px 16px;
+    text-align: left; font-weight: 600; font-size: 13px;
+  }
+  .compare-table td { padding: 12px 16px; border-bottom: 1px solid #f0f0f0; color: #555; }
+  .compare-table tr:last-child td { border-bottom: none; }
+  .compare-table tr:hover td { background: #f8faf9; }
+  .compare-table .check { color: #40887d; font-weight: 700; }
+
+  /* CTA */
+  .cta-box { background: linear-gradient(135deg, #2d6159, #40887d); border-radius: 16px; padding: 36px 28px; text-align: center; color: #fff; margin-top: 40px; }
+  .cta-box h2 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+  .cta-box p { font-size: 14px; opacity: 0.85; margin-bottom: 24px; line-height: 1.6; }
+  .cta-buttons { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+  .cta-btn { display: inline-flex; align-items: center; gap: 6px; padding: 12px 24px; border-radius: 50px; text-decoration: none; font-size: 14px; font-weight: 600; transition: all 0.2s; }
+  .cta-btn-primary { background: #fff; color: #2d6159; }
+  .cta-btn-primary:hover { background: #e6f2f0; }
+  .cta-btn-secondary { background: rgba(255,255,255,0.15); color: #fff; border: 1px solid rgba(255,255,255,0.3); }
+  .cta-btn-secondary:hover { background: rgba(255,255,255,0.25); }
+
+  .footer { text-align: center; padding: 32px 24px; font-size: 12px; color: #999; }
+  .footer a { color: #40887d; text-decoration: none; }
+
+  @media (max-width: 600px) {
+    .header { padding: 36px 20px; }
+    .container { padding: 24px 16px 40px; }
+    .hospital-body { padding: 20px; }
+    .hospital-header { flex-direction: column; }
+    .features { grid-template-columns: 1fr 1fr; }
+    .nav-links { gap: 14px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <a href="https://hpmanyonga.com" class="nav-brand">Network One Health</a>
+  <div class="nav-links">
+    <a href="provider.html">Providers</a>
+    <a href="faq.html">FAQ</a>
+    <a href="hospitals.html" class="active">Hospitals</a>
+    <a href="https://hpmanyonga.com" target="_blank">Main Site</a>
+  </div>
+</div>
+
+<div class="header">
+  <div class="header-badge">Our Birth Facilities</div>
+  <h1>Where You'll Give Birth</h1>
+  <p>Private hospitals with 24-hour obstetric coverage, NICU facilities, and dedicated maternity teams.</p>
+</div>
+
+<div class="container">
+
+<!-- BUSAMED MODDERFONTEIN -->
+<div class="hospital-card">
+  <div class="hospital-accent"></div>
+  <div class="hospital-body">
+
+    <div class="hospital-header">
+      <div class="hospital-name">
+        <h2>Busamed Modderfontein Private Hospital</h2>
+        <div class="hospital-city">Johannesburg</div>
+      </div>
+      <div class="hospital-badge">Primary Birth Facility</div>
+    </div>
+
+    <div class="hospital-address">
+      <span class="icon">&#128205;</span>
+      <div>4 Cransley Crescent, Long Lake, Ext 12, Linbro Park, Modderfontein, 2090<br>
+      <strong>Network One Maternity — 2nd Floor</strong></div>
+    </div>
+
+    <p class="hospital-desc">
+      Busamed Modderfontein is a modern, full-service private hospital in the east of Johannesburg. It is our primary birth facility, home to the <strong>EmpowerHer@Busamed</strong> midwife-led maternity programme — a collaboration between Network One Maternity and Busamed. The hospital offers advanced surgical theatres, a dedicated Neonatal ICU, and a 24-hour emergency unit staffed by specialist emergency physicians.
+    </p>
+
+    <div class="features">
+      <div class="feature"><span class="feature-icon">&#10003;</span> 24-hour Emergency Unit</div>
+      <div class="feature"><span class="feature-icon">&#10003;</span> Neonatal ICU (NICU)</div>
+      <div class="feature"><span class="feature-icon">&#10003;</span> Paediatric ICU</div>
+      <div class="feature"><span class="feature-icon">&#10003;</span> Advanced Operating Theatres</div>
+      <div class="feature"><span class="feature-icon">&#10003;</span> On-site Pharmacy</div>
+      <div class="feature"><span class="feature-icon">&#10003;</span> Radiology Services</div>
+      <div class="feature"><span class="feature-icon">&#10003;</span> Free Parking</div>
+      <div class="feature"><span class="feature-icon">&#10003;</span> Free Wi-Fi</div>
+      <div class="feature"><span class="feature-icon">&#10003;</span> Coffee Shop &amp; Cafe</div>
+      <div class="feature"><span class="feature-icon">&#10003;</span> Wheelchair Accessible</div>
+    </div>
+
+    <div class="hospital-contacts">
+      <a class="hospital-contact" href="tel:0114582000">&#9742; 011 458 2000</a>
+      <a class="hospital-contact" href="tel:0114582084">&#128680; Emergency: 011 458 2084</a>
+      <a class="hospital-contact" href="mailto:bmphinfo@busamed.co.za">&#9993; bmphinfo@busamed.co.za</a>
+    </div>
+
+    <div class="visiting">
+      <h4>Visiting Hours</h4>
+      <div class="visiting-grid">
+        <div class="visiting-item">
+          <strong>Maternity &amp; NICU</strong>
+          11:00–12:00 | 15:00–16:00 | 19:00–20:00<br>
+          Grandparents &amp; siblings by prior arrangement
+        </div>
+        <div class="visiting-item">
+          <strong>General Wards &amp; ICU</strong>
+          10:00–11:00 | 15:00–16:00 | 19:00–20:00<br>
+          Max 2 visitors; no children under 12
+        </div>
+      </div>
+    </div>
+
+    <div class="noh-section">
+      <h4>Network One at Busamed Modderfontein</h4>
+      <p>Our Johannesburg maternity team is based on the 2nd floor. This is where you will attend your antenatal consultations and give birth.</p>
+      <ul>
+        <li>Dedicated midwife-led birthing suite with 1:1 care</li>
+        <li>Obstetrician on call 24 hours for delivery</li>
+        <li>Doula support during labour</li>
+        <li>Paediatrician available for newborn assessment</li>
+        <li>Direct access to NICU if needed</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<!-- LOUIS PASTEUR -->
+<div class="hospital-card">
+  <div class="hospital-accent" style="background: linear-gradient(90deg, #4D4B37, #6b6849);"></div>
+  <div class="hospital-body">
+
+    <div class="hospital-header">
+      <div class="hospital-name">
+        <h2>Louis Pasteur Private Hospital</h2>
+        <div class="hospital-city">Pretoria</div>
+      </div>
+      <div class="hospital-badge">Pretoria Birth Facility</div>
+    </div>
+
+    <div class="hospital-address">
+      <span class="icon">&#128205;</span>
+      <div>374 Frances Baard Street, Pretoria Central, 0002<br>
+      <strong>Network One Maternity — Ground Floor</strong></div>
+    </div>
+
+    <p class="hospital-desc">
+      Louis Pasteur Private Hospital is a well-established private hospital in the heart of Pretoria CBD, known for its commitment to <strong>"Service Excellence with a Smile"</strong>. Conveniently located on Frances Baard Street, the hospital provides a full range of medical and surgical services, making quality private maternity care accessible to the Pretoria community.
+    </p>
+
+    <div class="features">
+      <div class="feature"><span class="feature-icon">&#10003;</span> 24-hour Emergency Unit</div>
+      <div class="feature"><span class="feature-icon">&#10003;</span> Operating Theatres</div>
+      <div class="feature"><span class="feature-icon">&#10003;</span> ICU &amp; High Care</div>
+      <div class="feature"><span class="feature-icon">&#10003;</span> Neonatal Care</div>
+      <div class="feature"><span class="feature-icon">&#10003;</span> On-site Pharmacy</div>
+      <div class="feature"><span class="feature-icon">&#10003;</span> Radiology</div>
+      <div class="feature"><span class="feature-icon">&#10003;</span> Central CBD Location</div>
+      <div class="feature"><span class="feature-icon">&#10003;</span> Paid Parking</div>
+    </div>
+
+    <div class="hospital-contacts">
+      <a class="hospital-contact" href="tel:0123366022">&#128680; Emergency: 012 336 6022</a>
+    </div>
+
+    <div class="noh-section">
+      <h4>Network One at Louis Pasteur</h4>
+      <p>Our Pretoria maternity team operates from the ground floor. The central location makes it easily accessible by public transport and from surrounding communities.</p>
+      <ul>
+        <li>Midwife-led antenatal consultations and birth</li>
+        <li>Obstetrician on call 24 hours</li>
+        <li>Doula support during labour</li>
+        <li>Paediatrician available for newborn assessment</li>
+        <li>Close to Pretoria CBD transport routes</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<!-- COMPARISON TABLE -->
+<div class="compare-section">
+  <div class="compare-title">At a Glance</div>
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th>Busamed Modderfontein</th>
+        <th>Louis Pasteur Pretoria</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>City</td><td>Johannesburg (East)</td><td>Pretoria (CBD)</td></tr>
+      <tr><td>NOH Floor</td><td>2nd Floor</td><td>Ground Floor</td></tr>
+      <tr><td>24hr Emergency</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+      <tr><td>NICU</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+      <tr><td>Operating Theatres</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+      <tr><td>Pharmacy On-site</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+      <tr><td>Free Parking</td><td class="check">&#10003;</td><td>Paid</td></tr>
+      <tr><td>NVD Hospital Stay</td><td>1 day</td><td>1 day</td></tr>
+      <tr><td>C-section Stay</td><td>2–3 days</td><td>2–3 days</td></tr>
+      <tr><td>Midwife 1:1 Support</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+      <tr><td>Doula Support</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+      <tr><td>24hr Obstetrician</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- CTA -->
+<div class="cta-box">
+  <h2>Ready to Book Your Birth?</h2>
+  <p>Contact us to discuss your delivery plan and choose the facility closest to you.</p>
+  <div class="cta-buttons">
+    <a class="cta-btn cta-btn-primary" href="tel:0114582497">&#9742; 011 458 2497</a>
+    <a class="cta-btn cta-btn-secondary" href="https://wa.me/27664992713" target="_blank">WhatsApp</a>
+    <a class="cta-btn cta-btn-secondary" href="mailto:info@networkonehealth.co.za?subject=Birth%20Facility%20Enquiry">Email Us</a>
+    <a class="cta-btn cta-btn-secondary" href="https://maternity-cost-estimator.streamlit.app/" target="_blank">Cost Estimator</a>
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  <p>Network One Health &mdash; Dr H P Manyonga &amp; Associates Inc.</p>
+  <p><a href="https://hpmanyonga.com">hpmanyonga.com</a> &nbsp;|&nbsp; <a href="faq.html">FAQ</a> &nbsp;|&nbsp; <a href="provider.html">Provider Portal</a></p>
+</div>
+
+</body>
+</html>

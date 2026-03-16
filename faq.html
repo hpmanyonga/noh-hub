@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ — Network One Maternity</title>
+<meta property="og:title" content="Network One Maternity — Frequently Asked Questions">
+<meta property="og:description" content="Everything you need to know about our maternity programme: pricing, payment plans, medical aid, team, birth options, and more.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #f8f9fa; color: #333; -webkit-font-smoothing: antialiased; }
+
+  .header { background: linear-gradient(160deg, #2d6159 0%, #40887d 50%, #5ca89e 100%); padding: 48px 24px; text-align: center; color: #fff; }
+  .header-badge { display: inline-block; background: rgba(255,255,255,0.15); font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; margin-bottom: 16px; }
+  .header h1 { font-size: clamp(26px, 5vw, 38px); font-weight: 800; margin-bottom: 10px; }
+  .header p { font-size: 16px; opacity: 0.85; max-width: 540px; margin: 0 auto; line-height: 1.5; }
+
+  .container { max-width: 800px; margin: 0 auto; padding: 40px 24px 60px; }
+
+  .toc { background: #fff; border: 1px solid #e8ede9; border-radius: 12px; padding: 24px 28px; margin-bottom: 32px; }
+  .toc h3 { font-size: 14px; font-weight: 700; color: #40887d; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+  .toc-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 6px; }
+  .toc-list a { font-size: 14px; color: #555; text-decoration: none; padding: 4px 0; display: block; }
+  .toc-list a:hover { color: #40887d; }
+
+  .section-label { font-size: 11px; font-weight: 700; color: #40887d; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px; margin-top: 40px; scroll-margin-top: 20px; }
+  .section-label:first-of-type { margin-top: 0; }
+
+  .faq-item { background: #fff; border: 1px solid #e8ede9; border-radius: 12px; margin-bottom: 10px; overflow: hidden; transition: box-shadow 0.2s; }
+  .faq-item:hover { box-shadow: 0 4px 16px rgba(64,136,125,0.08); }
+  .faq-q { padding: 18px 24px; font-size: 15px; font-weight: 700; color: #1a1a1a; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; user-select: none; }
+  .faq-q::after { content: '+'; font-size: 20px; font-weight: 400; color: #40887d; flex-shrink: 0; transition: transform 0.2s; }
+  .faq-item.open .faq-q::after { content: '\2212'; }
+  .faq-a { display: none; padding: 0 24px 20px; font-size: 14px; color: #555; line-height: 1.7; }
+  .faq-item.open .faq-a { display: block; }
+  .faq-a ul, .faq-a ol { margin: 8px 0 8px 20px; }
+  .faq-a li { margin-bottom: 4px; }
+  .faq-a strong { color: #333; }
+  .faq-a .note { background: #f0f9f7; border-left: 3px solid #40887d; padding: 10px 14px; border-radius: 4px; margin: 10px 0; font-size: 13px; color: #2d6159; }
+
+  .cta-box { background: linear-gradient(135deg, #2d6159, #40887d); border-radius: 16px; padding: 36px 28px; text-align: center; color: #fff; margin-top: 40px; }
+  .cta-box h2 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+  .cta-box p { font-size: 14px; opacity: 0.85; margin-bottom: 24px; line-height: 1.6; }
+  .cta-buttons { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+  .cta-btn { display: inline-flex; align-items: center; gap: 6px; padding: 12px 24px; border-radius: 50px; text-decoration: none; font-size: 14px; font-weight: 600; transition: all 0.2s; }
+  .cta-btn-primary { background: #fff; color: #2d6159; }
+  .cta-btn-primary:hover { background: #e6f2f0; }
+  .cta-btn-secondary { background: rgba(255,255,255,0.15); color: #fff; border: 1px solid rgba(255,255,255,0.3); }
+  .cta-btn-secondary:hover { background: rgba(255,255,255,0.25); }
+
+  .footer { text-align: center; padding: 32px 24px; font-size: 12px; color: #999; }
+  .footer a { color: #40887d; text-decoration: none; }
+
+  @media (max-width: 600px) {
+    .header { padding: 36px 20px; }
+    .container { padding: 24px 16px 40px; }
+    .faq-q { font-size: 14px; padding: 16px 18px; }
+    .faq-a { padding: 0 18px 16px; font-size: 13px; }
+    .toc-list { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-badge">Frequently Asked Questions</div>
+  <h1>Network One Maternity</h1>
+  <p>Everything you need to know — from your first call to bringing baby home.</p>
+</div>
+
+<div class="container">
+
+<!-- Table of Contents -->
+<div class="toc">
+  <h3>Jump to a section</h3>
+  <ul class="toc-list">
+    <li><a href="#about">About Network One</a></li>
+    <li><a href="#programme">The Maternity Programme</a></li>
+    <li><a href="#pricing">Pricing & Payment</a></li>
+    <li><a href="#medaid">Medical Aid</a></li>
+    <li><a href="#team">Your Care Team</a></li>
+    <li><a href="#birth">Birth & Hospital</a></li>
+    <li><a href="#journey">Your Pregnancy Journey</a></li>
+    <li><a href="#postnatal">After the Birth</a></li>
+    <li><a href="#safety">Safety & Quality</a></li>
+    <li><a href="#other">Other Services</a></li>
+    <li><a href="#practical">Practical Information</a></li>
+    <li><a href="#contact">Getting Started</a></li>
+  </ul>
+</div>
+
+<!-- ABOUT -->
+<div class="section-label" id="about">About Network One</div>
+
+<div class="faq-item open">
+  <div class="faq-q">Who is Network One Health?</div>
+  <div class="faq-a">
+    Network One Health (NOH) is a practice management company founded by <strong>Dr H P Manyonga</strong> (MBChB, MRCOG, FCOG(SA), MBA). NOH oversees a network of practices including Dr H P Manyonga Women's Health Services, SWIFT Care, and <strong>Network One Maternity</strong>. We specialise in team-based, value-based maternity and women's health care.
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-q">Is Network One a medical aid?</div>
+  <div class="faq-a">
+    <strong>No.</strong> Network One Maternity is not a medical aid or insurance product. It is a clinical care programme delivered by a multidisciplinary team of obstetricians, midwives, doulas, and other healthcare professionals. You pay a transparent, all-inclusive fee for your maternity care.
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-q">How long has the practice been operating?</div>
+  <div class="faq-a">
+    Dr Manyonga is a UK-trained obstetrician and gynaecologist (MRCOG) and Fellow of the College of Obstetricians and Gynaecologists of South Africa (FCOG(SA)). The practice is HPCSA-registered (Practice Number 0977357), a member of SASOG, and a Discovery Health Global Fee Partner. Our clinical protocols are developed with reference to WHO, RCOG, SASOG, and NDoH guidelines.
+  </div>
+</div>
+
+<!-- THE PROGRAMME -->
+<div class="section-label" id="programme">The Maternity Programme</div>
+
+<div class="faq-item">
+  <div class="faq-q">What does the maternity programme include?</div>
+  <div class="faq-a">
+    The programme covers your complete pregnancy journey from booking to six weeks postnatal:
+    <ul>
+      <li><strong>Initial antenatal assessment</strong> — comprehensive health review, booking scan, blood tests, and care plan</li>
+      <li><strong>Regular antenatal consultations</strong> — check-ups throughout pregnancy</li>
+      <li><strong>Ultrasound scans</strong> — dating, anatomy (20-22 weeks), and growth scans</li>
+      <li><strong>Routine blood tests and screening</strong></li>
+      <li><strong>Antenatal classes</strong> — childbirth preparation, breastfeeding, newborn care</li>
+      <li><strong>Birth at a private hospital</strong> — NVD or C-section, with midwife and obstetrician support</li>
+      <li><strong>Hospital stay</strong> — 1 day (NVD) or 2-3 days (C-section)</li>
+      <li><strong>Three postnatal visits</strong> — mother and baby wellness checks</li>
+      <li><strong>Pap smear</strong> — cervical screening</li>
+    </ul>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-q">When should I join the programme?</div>
+  <div class="faq-a">
+    <strong>As early as possible</strong> — ideally as soon as you know you are pregnant. Early booking (before 13 weeks) allows us to complete important first-trimester screening and establish your personalised care plan. Booking by the 26th week is required to participate fully in antenatal classes and build a meaningful relationship with your care team. Late bookings beyond 26 weeks are at the discretion of the attending provider.
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-q">Do I need to be on medical aid to join?</div>
+  <div class="faq-a">
+    <strong>No.</strong> The programme is designed primarily for women paying cash (without medical aid). However, if you have medical aid, you can still join and submit invoices to your scheme for reimbursement based on your plan's rules. Contact us with your scheme details and we will confirm coverage.
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-q">Is the fee lower if I join late in pregnancy?</div>
+  <div class="faq-a">
+    <strong>No.</strong> The Global Fee is consistent regardless of when you enrol. This ensures equitable access for all patients. The earlier you join, the more you benefit from the full scope of antenatal care included in the programme.
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-q">Can I join if I have a pre-existing condition like diabetes or HIV?</div>
+  <div class="faq-a">
+    A pre-existing condition does not automatically exclude you. If your condition is well-controlled, you can still enrol. However:
+    <ul>
+      <li>Medications and specialist consultations for the pre-existing condition are <strong>not included</strong> in the Global Fee and will be billed separately</li>
+      <li>You may require more frequent visits and monitoring</li>
+      <li>Your eligibility and any fee adjustments are determined during your initial assessment</li>
+    </ul>
+    The programme is designed for <strong>low-risk pregnancies</strong>. If your pregnancy becomes high-risk, your care plan will be adjusted and you may be referred to a specialist, with any additional costs discussed in advance.
+  </div>
+</div>
+
+<!-- PRICING -->
+<div class="section-label" id="pricing">Pricing & Payment</div>
+
+<div class="faq-item">
+  <div class="faq-q">How much does the programme cost?</div>
+  <div class="faq-a">
+    Indicative pricing (costs may vary by region):
+    <ul>
+      <li><strong>Natural Vaginal Delivery (NVD):</strong> from R30,000 — includes midwife-led care, 1-day hospital stay, and 3 postnatal visits</li>
+      <li><strong>Caesarean Section:</strong> from R60,000 — includes obstetrician-led delivery, 2-3 day hospital stay, and 3 postnatal visits</li>
+      <li><strong>Initial Assessment Fee:</strong> R4,600 (non-refundable, payable at first visit)</li>
+    </ul>
+    These are <strong>all-inclusive Global Fees</strong> — consultations, scans, tests, hospital delivery, and postnatal care. No hidden costs for uncomplicated pregnancies.
+    <div class="note">Use our <a href="https://maternity-cost-estimator.streamlit.app/" target="_blank" style="color:#2d6159;font-weight:600;">online Cost Estimator</a> for a personalised quote based on your specific needs.</div>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-q">Are payment plans available?</div>
+  <div class="faq-a">
+    <strong>Yes.</strong> We offer flexible monthly payment plans:
+    <ul>
+      <li>Instalments are customised to your financial situation</li>
+      <li>The earlier you enrol, the lower your monthly payments</li>
+      <li>Full payment must be completed by <strong>34 weeks gestation</strong> to ensure hospital arrangements are in place</li>
+      <li>Payment methods: EFT, credit card, debit card, or cash</li>
+    </ul>
+    We also have relationships with third-party credit providers who can assess your eligibility for financing.
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-q">What happens if I can't meet the payment deadline?</div>
+  <div class="faq-a">
+    If payment is not received by 34 weeks, our policy is to refer you to the public healthcare sector. This ensures you have adequate time to establish care with an alternative provider. We strongly encourage you to communicate any financial difficulties as early as possible so we can work together on a solution.
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-q">What is NOT included in the price?</div>
+  <div class="faq-a">
+    The Global Fee does not cover:
+    <ul>
+      <li><strong>Epidurals</strong> for normal deliveries (available at additional cost)</li>
+      <li><strong>NICU (neonatal intensive care)</strong> — this is why we require your baby to be on medical aid</li>
+      <li><strong>Private room upgrades</strong> or lodger accommodation</li>
+      <li><strong>Extended hospital stays</strong> beyond the standard package</li>
+      <li><strong>Specialised tests:</strong> NIPT, nuchal translucency scan, Down's syndrome screening (optional, offered at additional cost)</li>
+      <li><strong>Pre-existing condition management:</strong> medications and specialist visits for non-pregnancy conditions</li>
+      <li><strong>Serious complications</strong> requiring prolonged admission (>24 hours)</li>
+      <li><strong>Admissions before delivery</strong> for non-pregnancy-related problems</li>
+    </ul>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-q">Do you offer a birth-only rate?</div>
+  <div class="faq-a">
+    <strong>Yes.</strong> If you have received antenatal care elsewhere and only need delivery services, we offer a standalone birth-only package. Contact us for a personalised quote.
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-q">What is your refund policy?</div>
+  <div class="faq-a">
+    <ul>
+      <li>The <strong>Initial Assessment Fee (R4,600) is non-refundable</strong></li>
+      <li>If you withdraw before admission for delivery, you receive a refund for the excess amount already paid, as per the Refund Schedule</li>
+      <li>No refunds are issued after admission for labour</li>
+      <li>Refunds are processed within 10 business days</li>
+    </ul>
+  </div>
+</div>
+
+<!-- MEDICAL AID -->
+<div class="section-label" id="medaid">Medical Aid</div>
+
+<div class="faq-item">
+  <div class="faq-q">Do you accept medical aid?</div>
+  <div class="faq-a">
+    Dr Manyonga is a <strong>Discovery Health Global Fee Partner</strong>. For gynaecological services, we can bill certain medical aids directly. For the maternity programme, you pay the Global Fee and can submit invoices to your medical aid for reimbursement based on your scheme's rules. Contact us with your scheme details to confirm coverage before enrolling.
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-q">Why must my baby be on medical aid?</div>
+  <div class="faq-a">
+    We require that you or your partner have medical aid that allows you to <strong>register your baby at birth</strong> (secured by 32 weeks gestation). This is because <strong>NICU services are not included</strong> in our Global Fee. If your newborn needs intensive care, medical aid coverage ensures these potentially significant costs are covered. This is a non-negotiable requirement of the programme.
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-q">Can I claim back from my medical aid?</div>
+  <div class="faq-a">
+    Yes. After each service, you receive a detailed invoice which you can submit to your medical aid for reimbursement. The amount reimbursed depends on your specific scheme and plan rules.
+  </div>
+</div>
+
+<!-- TEAM -->
+<div class="section-label" id="team">Your Care Team</div>
+
+<div class="faq-item">
+  <div class="faq-q">Who will look after me during my pregnancy?</div>
+  <div class="faq-a">
+    You are cared for by an integrated multidisciplinary team:
+    <ul>
+      <li><strong>Obstetrician &amp; Gynaecologist</strong> — leads your clinical care, available 24 hours for delivery</li>
+      <li><strong>Clinical Associate / Medical Officer</strong> — supports antenatal consultations and care coordination</li>
+      <li><strong>Midwives</strong> — provide 1:1 support during labour and birth in a private birthing suite</li>
+      <li><strong>Sonographer</strong> — performs all ultrasound scans</li>
+      <li><strong>Doula</strong> — continuous emotional and physical support during labour</li>
+      <li><strong>Paediatrician</strong> — available for newborn assessment</li>
+    </ul>
+    This team-based model ensures continuity of care, 24-hour obstetric coverage, and a collaborative approach to your wellbeing.
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-q">Will I see the same provider at every visit?</div>
+  <div class="faq-a">
+    We strive to maintain consistency, but our team-based approach means you may see different members of your care team at different visits. This is by design — it means your care is never dependent on a single person, and there is always a provider who knows you available when needed, including for delivery.
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-q">What makes Network One different from other providers?</div>
+  <div class="faq-a">
+    Three things set us apart:
+    <ul>
+      <li><strong>One-stop, team-based care</strong> — antenatal, birth, and postnatal services under one roof with a multidisciplinary team, not a solo practitioner</li>
+      <li><strong>Transparent, all-inclusive pricing</strong> — a single Global Fee with no hidden costs, plus flexible payment plans</li>
+      <li><strong>Clinical governance</strong> — our protocols are developed to international standards (WHO, RCOG, SASOG, NDoH), with ongoing quality monitoring through our InSIST training programme and clinical dashboards</li>
+    </ul>
+  </div>
+</div>
+
+<!-- BIRTH -->
+<div class="section-label" id="birth">Birth & Hospital</div>
+
+<div class="faq-item">
+  <div class="faq-q">Where will I give birth?</div>
+  <div class="faq-a">
+    Deliveries take place at our partner private hospitals:
+    <ul>
+      <li><strong>Johannesburg:</strong> Busamed Modderfontein Private Hospital, 2nd Floor, 4 Cransley Crescent, Long Lake, Modderfontein</li>
+      <li><strong>Pretoria:</strong> Louis Pasteur Private Hospital, Ground Floor, 374 Frances Baard Street, Pretoria Central</li>
+    </ul>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-q">What birth options are covered?</div>
+  <div class="faq-a">
+    Both <strong>natural vaginal delivery (NVD)</strong> and <strong>caesarean section (C-section)</strong> are covered. Your birth plan is discussed with your obstetrician and midwifery team based on your clinical needs and preferences. We focus on supporting natural birth but perform caesarean sections when medically indicated.
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-q">Can I choose to have a caesarean?</div>
+  <div class="faq-a">
+    Our programme focuses on natural birth for low-risk pregnancies. Caesarean sections are performed when clinically necessary. If you have a preference, discuss it with your obstetrician during your antenatal visits — all decisions are made collaboratively with your best interests in mind.
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-q">What if I need an emergency caesarean?</div>
+  <div class="faq-a">
+    Emergency caesarean sections are managed by your care team, who are available 24 hours. The emergency C-section is covered, though an additional specialist fee may apply as outlined in your Medical Services Agreement.
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-q">Can I have an epidural?</div>
+  <div class="faq-a">
+    Epidurals are not included in the standard NVD package but can be arranged at additional cost. We encourage alternative pain management methods first, but the option is available and will be discussed with you during your birth planning.
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-q">How long will I stay in hospital?</div>
+  <div class="faq-a">
+    <ul>
+      <li><strong>Natural vaginal delivery:</strong> 1 day (24 hours)</li>
+      <li><strong>Caesarean section:</strong> 2-3 days</li>
+    </ul>
+    Extended stays are possible if clinically required, but are billed separately.
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-q">Do you offer home births?</div>
+  <div class="faq-a">
+    <strong>No.</strong> All deliveries take place at our partner private hospitals where the full clinical team and emergency facilities are available.
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-q">Can my partner be present during the birth?</div>
+  <div class="faq-a">
+    Yes. Your birth partner is welcome during labour and delivery. A doula is also part of the care team to provide additional emotional and physical support.
+  </div>
+</div>
+
+<!-- JOURNEY -->
+<div class="section-label" id="journey">Your Pregnancy Journey</div>
+
+<div class="faq-item">
+  <div class="faq-q">What happens at my first visit?</div>
+  <div class="faq-a">
+    Your initial antenatal assessment includes:
+    <ul>
+      <li>Consultation with a midwife specialist — medical history, lifestyle, and concerns</li>
+      <li>Booking ultrasound scan — confirm pregnancy and estimate due date</li>
+      <li>Routine blood tests — HIV, syphilis, blood type, Rh factor, anaemia, hepatitis</li>
+      <li>Obstetrician or medical officer review — examination and personalised care plan</li>
+    </ul>
+    This visit costs R4,600 (non-refundable) and is payable on the day.
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-q">What scans will I have during pregnancy?</div>
+  <div class="faq-a">
+    <ul>
+      <li><strong>Booking scan (6-9 weeks):</strong> Confirms pregnancy and dates — included</li>
+      <li><strong>First-trimester screening (12-14 weeks):</strong> Nuchal translucency and chromosomal screening — <em>optional, additional cost</em></li>
+      <li><strong>Anatomy scan (20-22 weeks):</strong> Detailed assessment of baby's development — included</li>
+      <li><strong>Growth scans:</strong> As clinically indicated — included</li>
+    </ul>
+    <div class="note">The anatomy scan at 20-22 weeks is thorough but cannot detect all conditions. This is discussed during your consent process.</div>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-q">What are the antenatal classes like?</div>
+  <div class="faq-a">
+    Group-based education sessions covering:
+    <ul>
+      <li>Childbirth preparation — breathing techniques, pain management options, what to expect</li>
+      <li>Breastfeeding — techniques, positioning, common challenges</li>
+      <li>Newborn care — bathing, feeding, immunisations, developmental milestones</li>
+      <li>What to pack for hospital</li>
+    </ul>
+    Classes typically begin around 24-28 weeks and are included in the programme fee. You are encouraged to bring your birth partner.
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-q">What if my pregnancy becomes high-risk?</div>
+  <div class="faq-a">
+    If complications arise:
+    <ul>
+      <li>Your care team will reassess your care plan immediately</li>
+      <li>You may be referred to a specialist in high-risk pregnancies</li>
+      <li>Additional costs will be discussed with you in advance</li>
+      <li>If specialised care becomes unaffordable, we will stabilise your condition and facilitate a safe transfer to a state facility</li>
+    </ul>
+    Continuation in the programme depends on whether appropriate care can be provided within the programme's scope.
+  </div>
+</div>
+
+<!-- POSTNATAL -->
+<div class="section-label" id="postnatal">After the Birth</div>
+
+<div class="faq-item">
+  <div class="faq-q">What postnatal care is included?</div>
+  <div class="faq-a">
+    Three scheduled postnatal visits covering:
+    <ul>
+      <li>Physical recovery assessment for mother</li>
+      <li>Baby wellness check — weight, feeding, development</li>
+      <li>Breastfeeding support and troubleshooting</li>
+      <li>Contraception counselling</li>
+      <li>Screening for postnatal depression</li>
+      <li>Pap smear (cervical screening)</li>
+    </ul>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-q">Do you provide breastfeeding support?</div>
+  <div class="faq-a">
+    Yes. Our midwives provide breastfeeding guidance during your hospital stay and postnatal visits. We cover techniques, positioning, managing common challenges like engorgement or latching difficulties, and when to seek additional help.
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-q">What about my baby's care after birth?</div>
+  <div class="faq-a">
+    A paediatrician is available for newborn assessment. However, <strong>ongoing neonatal care is not included</strong> in the programme fee. This is why we require your baby to be covered by medical aid. Immunisations and routine baby care should be arranged with your paediatrician or clinic after discharge.
+  </div>
+</div>
+
+<!-- SAFETY -->
+<div class="section-label" id="safety">Safety & Quality</div>
+
+<div class="faq-item">
+  <div class="faq-q">How do you ensure quality and safety?</div>
+  <div class="faq-a">
+    <ul>
+      <li><strong>International standards:</strong> Clinical protocols aligned with WHO, RCOG, SASOG, and NDoH guidelines</li>
+      <li><strong>InSIST programme:</strong> In-Service Skills Improvement and Situational Awareness Training keeps all team members current</li>
+      <li><strong>Clinical governance:</strong> Multi-disciplinary meetings, supportive supervision, and ongoing audit</li>
+      <li><strong>Quality dashboards:</strong> 21 clinical KPIs monitored in real-time across all sites</li>
+      <li><strong>HPCSA registered:</strong> All healthcare professionals are fully licensed</li>
+    </ul>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-q">What happens in an emergency outside office hours?</div>
+  <div class="faq-a">
+    A <strong>practice midwife is on call 24/7</strong> for guidance. In a true emergency, go to the nearest hospital emergency department and contact the practice as soon as possible. Do not self-admit to hospital without consulting the on-call midwife first — self-admissions without prior consultation may result in personal liability for costs.
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-q">How is my personal information protected?</div>
+  <div class="faq-a">
+    We comply fully with POPIA (Protection of Personal Information Act):
+    <ul>
+      <li>Your consent is obtained for collection and sharing of personal information</li>
+      <li>Data is used solely for medical services, claims processing, and necessary communications</li>
+      <li>Encrypted electronic medical records with limited access controls</li>
+      <li>Regular audits and established data breach protocols</li>
+      <li>You have the right to access, correct, or request deletion of your data</li>
+    </ul>
+  </div>
+</div>
+
+<!-- OTHER SERVICES -->
+<div class="section-label" id="other">Other Services</div>
+
+<div class="faq-item">
+  <div class="faq-q">Do you offer services beyond maternity care?</div>
+  <div class="faq-a">
+    Yes. Dr Manyonga's practice offers a full range of women's health services:
+    <ul>
+      <li><strong>Gynaecology consultations</strong> — comprehensive assessment and treatment</li>
+      <li><strong>Colposcopy (ColpoCare)</strong> — advanced evaluation and treatment of cervical abnormalities</li>
+      <li><strong>Pap smears</strong> — cervical cancer screening</li>
+      <li><strong>SWIFT Care</strong> — Sexual Wellness and Individually Focused Treatment, including fertility management, preconception packages, and extended counselling</li>
+      <li><strong>Well-Woman checks</strong> — comprehensive preventative health assessments</li>
+      <li><strong>Family planning and contraception</strong></li>
+      <li><strong>Minor gynaecological procedures</strong></li>
+    </ul>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-q">What is SWIFT Care?</div>
+  <div class="faq-a">
+    SWIFT (Sexual Wellness and Individually Focused Treatment) Care offers specialised sexual and reproductive health services:
+    <ul>
+      <li><strong>Preconception Package (R3,000):</strong> Comprehensive assessment and fertility preparation for couples planning pregnancy</li>
+      <li><strong>Extended Counselling Sessions (R4,000):</strong> 60-minute in-person consultations plus 45-minute teleconsult for emotional wellbeing, fertility concerns, or complex gynaecological conditions</li>
+    </ul>
+  </div>
+</div>
+
+<!-- PRACTICAL -->
+<div class="section-label" id="practical">Practical Information</div>
+
+<div class="faq-item">
+  <div class="faq-q">Where are your consultation rooms?</div>
+  <div class="faq-a">
+    <ul>
+      <li><strong>Johannesburg (Modderfontein):</strong> 2nd Floor, Busamed Modderfontein Private Hospital, 4 Cransley Crescent, Long Lake</li>
+      <li><strong>Johannesburg (Woodmead):</strong> Allhart Office Park, Building 5, 152 Western Service Road, Woodmead</li>
+      <li><strong>Pretoria:</strong> Louis Pasteur Private Hospital, Ground Floor, 374 Frances Baard Street, Pretoria Central</li>
+    </ul>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-q">What are your consulting hours?</div>
+  <div class="faq-a">
+    <ul>
+      <li><strong>Monday to Friday:</strong> 09:00 — 17:00</li>
+      <li><strong>Saturday:</strong> Limited services until 13:00 (by prior arrangement)</li>
+      <li><strong>After hours:</strong> On-call midwife available for urgent concerns</li>
+    </ul>
+    We operate by appointment only to ensure dedicated, unhurried care at every visit.
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-q">Do I need to book an appointment or can I walk in?</div>
+  <div class="faq-a">
+    <strong>Appointments are required.</strong> This ensures you receive dedicated time with your provider without rushing. Book by calling 011 458 2497, emailing info@networkonehealth.co.za, or via WhatsApp on 066 499 2713.
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-q">What is your cancellation policy?</div>
+  <div class="faq-a">
+    Please cancel or reschedule at least <strong>24 hours in advance</strong>. Missed appointments without prior notice may incur a fee.
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-q">Is parking available?</div>
+  <div class="faq-a">
+    Free secure parking is available at most of our clinic sites. Parking at Louis Pasteur Hospital in Pretoria is for a fee.
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-q">Are online/telehealth consultations available?</div>
+  <div class="faq-a">
+    Yes, virtual consultations are available for follow-up appointments and non-urgent concerns — but only after an initial in-person assessment has been completed.
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-q">What languages do you cater for?</div>
+  <div class="faq-a">
+    Our team is multilingual. We recognise that English may not be your first language and strive to communicate clearly. Translation support can be arranged upon request.
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-q">How do I raise a concern or complaint?</div>
+  <div class="faq-a">
+    <ol>
+      <li>Speak directly to your healthcare provider</li>
+      <li>If unresolved, contact the Practice Manager at <strong>admin@networkonehealth.co.za</strong></li>
+      <li>A formal complaints process is in place to ensure fair resolution</li>
+      <li>If necessary, disputes can be referred to independent mediation</li>
+    </ol>
+    We encourage open dialogue and take all feedback seriously.
+  </div>
+</div>
+
+<!-- GETTING STARTED -->
+<div class="section-label" id="contact">Getting Started</div>
+
+<div class="faq-item">
+  <div class="faq-q">How do I enrol in the programme?</div>
+  <div class="faq-a">
+    <ol>
+      <li><strong>Contact us</strong> — phone, email, or WhatsApp to express interest</li>
+      <li><strong>Schedule your initial assessment</strong> — your first appointment (R4,600)</li>
+      <li><strong>Complete registration forms</strong> — medical history, consent, and personal details</li>
+      <li><strong>Review and sign the Medical Services Agreement</strong> — the agreement outlining your care, responsibilities, and financial terms</li>
+      <li><strong>Set up your payment plan</strong> — customised to suit your budget</li>
+    </ol>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-box">
+  <h2>Ready to Start Your Journey?</h2>
+  <p>Book your first consultation or get a personalised cost estimate. Our team is here to help.</p>
+  <div class="cta-buttons">
+    <a class="cta-btn cta-btn-primary" href="tel:0114582497">&#9742; 011 458 2497</a>
+    <a class="cta-btn cta-btn-secondary" href="https://wa.me/27664992713" target="_blank">WhatsApp</a>
+    <a class="cta-btn cta-btn-secondary" href="mailto:info@networkonehealth.co.za?subject=Maternity%20Programme%20Enquiry">Email Us</a>
+    <a class="cta-btn cta-btn-secondary" href="https://maternity-cost-estimator.streamlit.app/" target="_blank">Cost Estimator</a>
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  <p>Network One Health &mdash; Dr H P Manyonga &amp; Associates Inc.</p>
+  <p>MBChB (UZ) | MRCOG (UK) | FCOG(SA) | MBA (UCT) | HPCSA Registered | SASOG Member | Discovery Global Fee Partner</p>
+  <p style="margin-top:6px;"><a href="https://hpmanyonga.com">hpmanyonga.com</a> &nbsp;|&nbsp; <a href="https://www.networkonematernity.co.za">networkonematernity.co.za</a></p>
+</div>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(function(q) {
+    q.addEventListener('click', function() {
+      var item = this.parentElement;
+      item.classList.toggle('open');
+    });
+  });
+</script>
+
+</body>
+</html>
